@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>داروخانه دکتر عبدوسی | Dr. Abdoosi Pharmacy</title>
+<style>
+:root {
+  --pink-main: #f472b6;
+  --pink-soft: #fbcfe8;
+  --pink-bg: #fff0f5;
+  --pink-light: #fff8fa;
+  --card-bg: #ffffff;
+  --cad-teal: #1f9a80;
+  --cad-cyan: #3a9ed8;
+  --text-main: #33222e;
+  --text-muted: #8a7382;
+  --line-color: #f7e1eb;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--pink-bg);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+button, input { font: inherit; }
+button { cursor: pointer; border: none; }
+.wrap { width: min(1100px, calc(100% - 32px)); margin: auto; }
+
+/* Announcement Bar */
+.announcement {
+  background: linear-gradient(90deg, #fce7f3, #ffe4e6);
+  text-align: center;
+  color: #9d174d;
+  font-size: 12px;
+  padding: 8px 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-color);
+}
+.head {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+.brand-logo-box {
+  background: #ffffff;
+  border: 1px solid var(--line-color);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-cad {
+  font-weight: 900;
+  font-size: 18px;
+  background: linear-gradient(135deg, var(--cad-teal), var(--cad-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+.brand-title b {
+  font-size: 16px;
+  display: block;
+  line-height: 1.2;
+  color: var(--text-main);
+  font-weight: 700;
+}
+.brand-title small {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+nav { display: flex; gap: 24px; }
+nav a {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--pink-main); }
+
+.head-actions { display: flex; gap: 10px; }
+.pill-btn {
+  border: 1px solid var(--line-color);
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 9px 18px;
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.pill-btn:hover {
+  background: var(--pink-light);
+  border-color: var(--pink-soft);
+}
+.cart-btn {
+  background: var(--pink-main);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(244, 114, 182, 0.35);
+}
+.cart-btn:hover {
+  background: #ec4899;
+  box-shadow: 0 6px 18px rgba(244, 114, 182, 0.45);
+}
+
+/* Hero Section */
+.hero { padding: 45px 0 25px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 30px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--line-color);
+  color: var(--pink-main);
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(244, 114, 182, 0.08);
+}
+.hero h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin: 16px 0 12px;
+  color: var(--text-main);
+  font-weight: 800;
+}
+.hero h1 span.highlight {
+  color: var(--pink-main);
+  position: relative;
+  display: inline-block;
+}
+.hero p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 440px;
+  margin-bottom: 24px;
+}
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  border-radius: 99px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.25s ease;
+}
+.btn-main {
+  background: var(--pink-main);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3);
+}
+.btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(244, 114, 182, 0.4);
+}
+.btn-soft {
+  background: #ffffff;
+  color: var(--pink-main);
+  border: 1px solid var(--line-color);
+}
+.btn-soft:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual Stage */
+.hero-stage {
+  height: 340px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pink-blob {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+.hero-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 30px 40px;
+  box-shadow: 0 20px 40px rgba(244, 114, 182, 0.12);
+  border: 2px solid #ffffff;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+.hero-card .logo-cad {
+  font-size: 52px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--cad-teal), var(--cad-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+.hero-card .subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 600;
+}
+.floating-badge {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pink-main);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border: 1px solid var(--line-color);
+  animation: float 5s ease-in-out infinite reverse;
+}
+.badge-1 { top: 20px; right: 20px; }
+.badge-2 { bottom: 20px; left: 20px; }
+
+/* Features / Trust */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 20px 0 40px;
+}
+.trust-card {
+  background: #ffffff;
+  border: 1px solid var(--line-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.04);
+}
+.trust-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--pink-bg);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+.trust-card b { font-size: 13px; display: block; color: var(--text-main); }
+.trust-card small { font-size: 11px; color: var(--text-muted); }
+
+/* Categories */
+.section { padding: 30px 0 40px; }
+.section-title { text-align: center; margin-bottom: 28px; }
+.section-title span { color: var(--pink-main); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.section-title h2 { font-size: 24px; margin: 4px 0 0; color: var(--text-main); }
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.category-btn {
+  background: #ffffff;
+  border: 1px solid var(--line-color);
+  border-radius: var(--radius-md);
+  padding: 16px 8px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.category-btn:hover, .category-btn.active {
+  background: #ffffff;
+  border-color: var(--pink-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(244, 114, 182, 0.12);
+}
+.category-btn.active {
+  border-color: var(--pink-main);
+  background: var(--pink-light);
+}
+.cat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--pink-bg);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  margin: 0 auto 8px;
+}
+.category-btn b { font-size: 12px; display: block; color: var(--text-main); }
+
+/* Products Section */
+.products-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.search-input {
+  border: 1px solid var(--line-color);
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 10px 18px;
+  font-size: 12px;
+  width: 240px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--pink-main); }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.product-card {
+  background: #ffffff;
+  border: 1px solid var(--line-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  transition: all 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(244, 114, 182, 0.12);
+}
+.product-thumb {
+  height: 150px;
+  border-radius: var(--radius-sm);
+  background: var(--pink-light);
+  display: grid;
+  place-items: center;
+  font-size: 50px;
+  position: relative;
+}
+.product-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--pink-main);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.product-info { padding: 10px 2px 2px; }
+.product-info h3 { font-size: 13px; margin: 0 0 8px; color: var(--text-main); }
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price { font-size: 13px; font-weight: 800; color: var(--text-main); }
+.add-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pink-bg);
+  color: var(--pink-main);
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+.add-btn:hover {
+  background: var(--pink-main);
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line-color);
+  background: #ffffff;
+  padding: 35px 0 20px;
+  margin-top: 50px;
+}
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-info p { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+.copyright {
+  border-top: 1px solid var(--line-color);
+  padding-top: 16px;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes pulse {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.05); }
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .categories, .products-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 620px) {
+  .categories, .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust { grid-template-columns: 1fr; }
+  nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">🎀 داروخانه دکتر عبدوسی ورامین — مراقبت لطیف و زیباتر از سلامت شما</div>
+
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#">
+      <div class="brand-logo-box">
+        <span class="brand-cad">CAD</span>
+      </div>
+      <div class="brand-title">
+        <b>داروخانه دکتر عبدوسی</b>
+        <small>Dr. Abdoosi Pharmacy</small>
+      </div>
+    </a>
+    <nav>
+      <a href="#categories">دسته‌بندی‌ها</a>
+      <a href="#products">محصولات</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
+    <div class="head-actions">
+      <button class="pill-btn cart-btn">🛍 سبد خرید</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">🌸 مراقبت روزانه با حس خوب</span>
+        <h1>سلامتی و زیبایی، با یک<br><span class="highlight">انتخاب لطیف</span> شروع میشه ♡</h1>
+        <p>مجموعه‌ای از بهترین محصولات پوستی، بهداشتی، مکمل‌ها و مراقبت‌های دارویی در داروخانه دکتر عبدوسی (ورامین).</p>
+        <div class="hero-buttons">
+          <button class="btn btn-main" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">مشاهده فروشگاه ←</button>
+          <button class="btn btn-soft">ارسال نسخه</button>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <div class="pink-blob"></div>
+        <div class="floating-badge badge-1">✨ اصالت ۱۰۰٪ کالا</div>
+        <div class="hero-card">
+          <div class="logo-cad">CAD</div>
+          <div class="subtitle">Dr. Abdoosi Pharmacy</div>
+        </div>
+        <div class="floating-badge badge-2">📍 ورامین</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap trust">
+    <div class="trust-card">
+      <div class="trust-icon">🎀</div>
+      <div><b>خرید مطمئن و آسان</b><small>ثبت سفارش در چند ثانیه</small></div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🌷</div>
+      <div><b>محصولات اورجینال</b><small>تضمین اصالت دارویی</small></div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">💌</div>
+      <div><b>مشاوره دارویی</b><small>تحت نظارت دکتر عبدوسی</small></div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="categories">
+    <div class="section-title">
+      <span>مجموعه‌ها</span>
+      <h2>چه محصولی دوست داری؟</h2>
+    </div>
+    <div class="categories">
+      <button class="category-btn active"><div class="cat-icon">🧴</div><b>مراقبت پوست</b></button>
+      <button class="category-btn"><div class="cat-icon">🍊</div><b>ویتامین و مکمل</b></button>
+      <button class="category-btn"><div class="cat-icon">🧸</div><b>کودک و مادر</b></button>
+      <button class="category-btn"><div class="cat-icon">🫧</div><b>بهداشت شخصی</b></button>
+      <button class="category-btn"><div class="cat-icon">🩺</div><b>تجهیزات سلامت</b></button>
+      <button class="category-btn"><div class="cat-icon">🎁</div><b>همه موارد</b></button>
+    </div>
+  </section>
+
+  <section class="wrap section" id="products">
+    <div class="products-head">
+      <div>
+        <h2 style="font-size:22px;margin:0">پیشنهادهای ویژه ♡</h2>
+      </div>
+      <input type="text" class="search-input" placeholder="جستجوی محصول..." />
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-thumb">
+          <span>🧴</span>
+          <span class="product-tag">محبوب</span>
+        </div>
+        <div class="product-info">
+          <h3>کرم آبرسان صورت</h3>
+          <div class="product-bottom">
+            <span class="product-price">۲۸۵,۰۰۰ تومان</span>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">
+          <span>🍊</span>
+          <span class="product-tag">ویتامین</span>
+        </div>
+        <div class="product-info">
+          <h3>مولتی‌ویتامین روزانه</h3>
+          <div class="product-bottom">
+            <span class="product-price">۳۶۵,۰۰۰ تومان</span>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">
+          <span>🍼</span>
+          <span class="product-tag">کودک</span>
+        </div>
+        <div class="product-info">
+          <h3>شیشه شیر ضد کولیک</h3>
+          <div class="product-bottom">
+            <span class="product-price">۲۴۵,۰۰۰ تومان</span>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">
+          <span>🩺</span>
+          <span class="product-tag">سلامت</span>
+        </div>
+        <div class="product-info">
+          <h3>فشارسنج دیجیتال</h3>
+          <div class="product-bottom">
+            <span class="product-price">۱,۸۵۰,۰۰۰ تومان</span>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-wrap">
+      <div class="footer-info">
+        <a class="brand" href="#">
+          <div class="brand-logo-box"><span class="brand-cad">CAD</span></div>
+          <div class="brand-title">
+            <b>داروخانه دکتر عبدوسی</b>
+            <small>Dr. Abdoosi Pharmacy</small>
+          </div>
+        </a>
+        <p>ورامین — ارائه تخصصی خدمات دارویی، آرایشی و بهداشتی با مهر و لبخند ♡</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © کلیه حقوق برای داروخانه دکتر عبدوسی محفوظ است.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
